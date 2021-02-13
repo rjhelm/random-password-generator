@@ -3,7 +3,7 @@
 // Characters
 let pickLower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 let pickUpper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-let pickNumber = [0,1,2,3,4,5,6,7,8,9];
+let pickNumber = ['0','1','2','3','4','5','6','7','8','9'];
 let pickSymbol = [' ','!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[',']','_','~'];
 
 // Character Questions
@@ -22,6 +22,7 @@ function characterOptions() {
     alert("Your pass word must be between 8 and 128 characters. Please Try Again!");
     return;
   }
+ 
   // Ask if user wants lower case characters
   let lowercase = confirm("If you would like to include lower case characters, press 'OK'.");
   // Ask if user wants upper case characters
@@ -33,72 +34,81 @@ function characterOptions() {
   // If the user does not pick 1 of the characters
     if (!lowercase && !uppercase && !numbers && !symbols) {
       alert("You must include at least one lower case, upper case, number, or special character. Please Try Again!");
-      return;
+      return(characterOptions);
     }
 
-    let passwordOptions = {
-        length: passwordLength,
-        lowerCase: lowercase,
-        upperCase: uppercase,
-        numeric: numbers,
-        specialCharacters: symbols
-    }
+  let characterOptions = {
+   passwordLength,
+   lowercase,
+   uppercase,
+   numbers,
+   symbols
+  }
 
-    return passwordOptions;
-  
+  return characterOptions;
+    
 }
+
+
 
 function generatePassword() {
   
-  var options = characterOptions();
+  let options = characterOptions();
   console.log(options)
 
-  var passPool = [];
-  console.log(passPool)
+  let ps = [];
+  console.log(ps)
 
-  if (options.lowerCase) {
-    for (i = 0; i < pickLower.length; ++i) {
-      passPool.push(pickLower[i]);
+  if (options.lowercase) {
+    for (i = 0; i < pickLower.length; i++) {
+      ps.push(pickLower[i]);
     }
   }
-  if (options.upperCase) {
-    for (i= 0; i < pickUpper.length; ++i) {
-      passPool.push(pickUpper[i]);
+  if (options.uppercase) {
+    for (i= 0; i < pickUpper.length; i++) {
+      ps.push(pickUpper[i]);
     }
   }
-  if (options.numeric) {
-    for (i = 0; i < pickNumber.length; ++i) {
-      passPool.push(pickNumber[i]);
+  if (options.numbers) {
+    for (i = 0; i < pickNumber.length; i++) {
+      ps.push(pickNumber[i]);
     }
   }
-  if (options.specialCharacters) {
+  if (options.symbols) {
     for (i = 0; i < pickSymbol.length; i++) {
-      passPool.push(pickSymbol[i]);
+      ps.push(pickSymbol[i]);
     }
   }
 
   var password = [];
 
   for (let i = 0; i < options.length; i++) {
-    var randomPicker = Math.floor(Math.random() * Math.floor(passPool.length));
-    password.push(passPool[randomPicker])
+    let randomPicker = options(Math.floor(Math.random() * Math.floor(ps.length));
+    ps.push(randomPicker);
   }
 
-  console.log(password)
+  // Write password to the #password input
+ //function writePassword() {
+   // let writePassword = generatePassword();
+    //let passwordText = document.querySelector("#password").textContent = ps.push(randomPicker);
+
+    //passwordText.value = [];
+
+  //}
 
 }
 
 // Get references to the #generate element
-let generateBtn = document.querySelector("#generate");
+//let generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
-  let password = generatePassword();
-  let passwordText = document.querySelector("#password");
+//function writePassword() {
+  //let password = generatePassword();
+  //let passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  //passwordText.value = password;
 
-}
+//}
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+//generateBtn.addEventListener("click", writePassword);
