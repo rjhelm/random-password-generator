@@ -111,12 +111,20 @@ var specialCharacter = ["#","$","%","&","(",")","*","+",",","-",".","/",":",";",
 
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+  // Write password to the #password input
 
+ /* function writePassword() {
+   var password = generatePassword();
+   var passwordText = document.getElementById("#password");
+
+   passwordText.value = password;
+*/
+generateBtn.addEventListener("click", function () {
+  ps = generatePassword();
+  document.getElementById("password").placeholder = ps;
+});
 // Add prompts for the user to select length and characters
 function characterOptions() {
   var passwordLength = parseInt(prompt("Please enter the length you would like the password to be! (Must be between 8 and 128 characters!)"));
@@ -181,27 +189,27 @@ function generatePassword () {
       pass.push(specialCharacter[i]);
     }
   }
-  
-  var finalPass = [];
 
-  for (let i = 0; i < characters.length; i++) {
+  var password = [];
+
+  for (var i = 0; i < characters.length; i++) {
     var randomGenerate = Math.floor(Math.random() * Math.floor(pass.length));
-    finalPass.push(pass[randomGenerate])
+    password.push(pass[randomGenerate]);
   }
-  console.log(finalPass)
-
- 
- 
+  var ps = password.join("");
+  UserInput(ps);
+  return ps;
 }
 
-
- function writePassword() {
-   var password = generatePassword();
-   var passwordText = document.querySelector("#password");
-
-   passwordText.value = password;
- }
+ 
 
 
 
+function UserInput(ps) {
+    document.getElementById("password").textContent = ps;
 
+}    
+  
+// Add event listener to generate button
+//generateBtn.addEventListener("click", writePassword);
+//password.addEventListener("click", generatePassword);
