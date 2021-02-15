@@ -18,4 +18,4 @@
 
 ## Screenshot
 
-![Website Screenshot](password-screenshot.png)
+![Website Screenshot](./assets/images/password-screenshot.png)
