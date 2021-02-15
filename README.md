@@ -16,6 +16,6 @@
 
 <br />
 
-## Screenshot 
+## Screenshot
 
-![Website Screenshot](screenshot.png)
+![Website Screenshot](password.screenshot.png)
