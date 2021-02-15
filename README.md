@@ -2,10 +2,12 @@
 
 ### About:
 
-#### This is a password generator that was created using HTML, CSS, and Javascript. Using Javascript I have created a password generator that gives the user questions through system alerts, based on the answer that they provide a password is randomly generated. 
+#### Per request, this web application will generate a random password based on user need. 
 
-#### The user is asked to choose a length between 8 and 128, any response that is outside of those parameters will alert the user that they must select a number that is between 8 and 128 and returns them to the previous alert. 
+#### Once the user clicks the "Generate Password" button, prompts from the browser will ask the user to select a length for the password. If the user enters anything outside of 8 and 128 characters they will be prompted to enter a valid length. This goes for a blank field or any other value that may be input. 
 
-#### The user will also be asked to pick whether they want lower case, upper case, numbers, or special characters. The user must select one or they will be asked to try again. 
+#### Once a valid length is entered by the user, they will be asked to confirm the characters they would like to use for the password (lowercase, uppercase, numbers, and special characters). The user will select "OK" for "yes" and cancel for "no". If no character types are selected by the user, an alert will inform them that they must select one and will be given the option to select again. 
 
-#### One a password is generated, the user is shown the generated password and given the option too directly copy the password to the clipboard. 
+#### Once this is completed by the user the password will be generated based on the choices they made with random characters and it will display in the "Your Secure Password" field on the screen. 
+
+
