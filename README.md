@@ -11,3 +11,11 @@
 #### Once this is completed by the user the password will be generated based on the choices they made with random characters and it will display in the "Your Secure Password" field on the screen. 
 
 
+## Website Link
+#### Link to [Random Password Generator](https://rjhelm.github.io/random-password-generator/)
+
+<br />
+
+## Screenshot 
+
+![Website Screenshot](screenshot.png)
